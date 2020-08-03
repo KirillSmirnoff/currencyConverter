@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1>Конвертер</h1>
+
+<!--<form  action="#" th:action="@{/account/register}" method="post" th:object="${person}">-->
+<!--    <label for="name">ИМЯ</label>-->
+<!--    <input type="text" th:field="*{firstName}"    id="name"/><br>-->
+<!--    <label for="last">Фамилия</label>-->
+<!--    <input type="text" th:field="*{lastName}"  id="last"/><br>-->
+<!--    <label for="login" >Логин</label>-->
+<!--    <input type="text" th:field="*{login}"  id="login"/><br>-->
+<!--    <label for="pas" >Пароль</label>-->
+<!--    <input  type="text" th:field="*{password}"  id="pas"/><br>-->
+<!--    <input type="submit" value="Регистрация">-->
+<!--</form>-->
+<!--<a href="/account/list" >Отмена</a>-->
+
+<form  action="#" th:action="@{/account/register}" method="post" th:object="${currencies}">
+<!--    <label for="original-currency">ИМЯ</label>-->
+    <select  name="curO"   id="original-currency">
+    <option th:each="item : ${currencies}"
+    th:value="${item.getName()}"
+    th:utext="${item.getName()}"/>
+    </select>
+<!--    <label for="last">Фамилия</label>-->
+<!--    <input type="text"  id="final-currency"/><br>-->
+<select  name="curF"   id="final-currency">
+    <option selected value="Российский рубль(RUB)">Российский рубль(RUB)</option>
+    <option th:each="item : ${currencies}"
+            th:value="${item.getName()}"
+            th:utext="${item.getName()}"/>
+</select><br>
+<!--    <label for="login" >Логин</label>-->
+    <input type="text" th:value="*{12}"  id="value-original-currency"/>
+<!--    <label for="pas" >Пароль</label>-->
+    <input  type="text"   id="value-final-currency"/><br>
+    <input type="submit" value="конвертация">
+</form>
+<!--<a href="/account/list" >Отмена</a>-->
+
+<!--<tr th:each="item : ${person}">-->
+
+<!--    <td th:utext="${item.id}" /></td>-->
+<!--    <td th:utext=  "${item.firstName}" /></td>-->
+<!--    <td th:utext="${item.lastName}" /></td>-->
+<!--    <td th:utext="${item.login}" /></td>-->
+<!--    <td th:utext="${item.password}" /></td>-->
+<!--    <td><a th:href="@{/account/{id} (id=${item.id})}" >Delete</a></td>-->
+<!--    <td><a th:href="@{/account/edit/{id} (id=${item.id})}" >Edit</a></td>-->
+<!--</tr>-->
+<!--</trc:forEach>-->
+
+</body>
+</html>

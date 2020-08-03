@@ -1,0 +1,1 @@
+-- create  table  currencies (id varchar(20), num_code varchar(10), char_code varchar(10), name varchar(100),  value double precision);
