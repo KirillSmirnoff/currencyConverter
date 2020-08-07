@@ -24,5 +24,24 @@
     <input type="submit" value="конвертация">
 </form>
 
+<table >
+    <caption>История</caption>
+    <tr>
+        <th>Начальная валюта</th>
+        <th>Финальная валюта</th>
+        <th>номинал</th>
+        <th>сумма</th>
+        <th>время</th>
+    </tr>
+    <tr th:each="item : ${exchanges}">
+
+        <td th:utext="${item.originalCurrencyName}"></td>
+        <td th:utext=  "${item.finalCurrencyName}" ></td>
+        <td th:utext="${item.nominal}" ></td>
+        <td th:utext="${item.summary}" ></td>
+        <td th:utext="${item.time}" ></td>
+    </tr>
+</table>
+
 </body>
 </html>

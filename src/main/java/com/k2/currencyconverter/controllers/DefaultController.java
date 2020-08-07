@@ -32,6 +32,7 @@ public class DefaultController {
 
         currencies = currencyService.getAll();
         modelUi.addAttribute("currencies", currencies);
+        modelUi.addAttribute("exchanges",exchangeService.getAll());
         return "index";
     }
 
@@ -53,6 +54,7 @@ public class DefaultController {
 
         exchangeService.saveExchange(exchange);
 
+        modelUi.addAttribute("exchanges",exchangeService.getAll());
         return "index";
     }
 
