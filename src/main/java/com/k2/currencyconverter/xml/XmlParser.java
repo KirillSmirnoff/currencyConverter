@@ -11,17 +11,17 @@ import java.io.IOException;
 
 @Component
 public class XmlParser {
-    public static final String URi = "/home/k2/Desktop/XML_daily.asp";
+    public static final String URi = "/home/k2/Desktop/XML_daily.xml";
     //    public static final String URi= "http://www.cbr.ru/scripts/XML_daily.asp";
 
-    private XMLHandler xmlHandler;
+    private static XMLHandler xmlHandler;
 
     @Autowired
     public void setXmlHandler(XMLHandler xmlHandler) {
         this.xmlHandler = xmlHandler;
     }
 
-    public void parseXml() {
+    public static void parseXml() {
         try {
             SAXParser saxParser = SAXParserFactory.newInstance().newSAXParser();
             saxParser.parse(URi, xmlHandler);

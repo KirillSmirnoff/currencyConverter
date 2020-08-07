@@ -16,11 +16,18 @@ public class CurrencyService {
     public CurrencyService(CurrencyDao currencyDao) {
         this.currencyDao = currencyDao;
     }
+
     public  void  save(Currency currency){
         currencyDao.save(currency);
     }
 
     public  List<Currency>getAll(){
         return  currencyDao.findAll();
+    }
+
+    public Currency getCurrencyValueById(String id){
+        return currencyDao.findById(id).
+                orElseGet(Currency::new);
+
     }
 }
