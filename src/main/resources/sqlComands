@@ -10,4 +10,6 @@ create table exchanges
     final_currency varchar(100), nominal int, summary double precision, time int);
 
 select * from currencies;
+select DISTINCT date from currencies where date = '2020-07-30' limit 1;
+select date from currencies where date = '2020-07-30' limit 2;
 select * from exchanges;
